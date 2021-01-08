@@ -50,7 +50,7 @@ function validateForm() {
     if(mobile == "") {
         printError("mobileErr", "Please enter your mobile number");
     } else {
-        var regex = /^[0-9]\d{9}$/;
+        var regex = /^[0-9]\d{9,11}$/; // as inthe spec, a mobile number can be between 9 and 11 numbers eg.826465764 or 27826465764
         if(regex.test(mobile) === false) {
             printError("mobileErr", "Please enter a valid 10 digit mobile number");
         } else{
